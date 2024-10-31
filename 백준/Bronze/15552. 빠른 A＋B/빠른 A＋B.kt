@@ -1,15 +1,11 @@
 fun main() {
-    val tc = readln().toInt() // 4
-    val result_list =  mutableListOf(0)
-    var sum = 0
-    result_list.clear()
+    val tc = readln().toInt() // 테스트 케이스 수
+    val resultBuilder = StringBuilder()
 
-    while (result_list.size < tc) {
+    for (i in 1..tc) {
         val (a, b) = readln().split(" ").map { it.toInt() }
-        sum = a + b
-        result_list.add(sum)
+        resultBuilder.append(a + b).append("\n") // 각 결과를 저장하고 줄바꿈 추가
     }
-    val result = result_list.joinToString(separator = "\n")
 
-    println(result)
+    print(resultBuilder.toString()) // 모든 결과를 한 번에 출력
 }
