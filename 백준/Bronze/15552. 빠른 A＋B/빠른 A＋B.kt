@@ -1,11 +1,19 @@
-fun main() {
-    val tc = readln().toInt() // 테스트 케이스 수
-    val resultBuilder = StringBuilder()
+import java.io.BufferedReader
+import java.io.BufferedWriter
+import java.io.InputStreamReader
+import java.io.OutputStreamWriter
+import java.util.StringTokenizer
 
-    for (i in 1..tc) {
-        val (a, b) = readln().split(" ").map { it.toInt() }
-        resultBuilder.append(a + b).append("\n") // 각 결과를 저장하고 줄바꿈 추가
+fun main() {
+    val br = BufferedReader(InputStreamReader(System.`in`))
+    val bw = BufferedWriter(OutputStreamWriter(System.out))
+
+    repeat(br.readLine().toInt()) {
+        val token = StringTokenizer(br.readLine())
+        val sum = (token.nextToken().toInt() + token.nextToken().toInt()).toString()
+        bw.write(sum + "\n")
     }
 
-    print(resultBuilder.toString()) // 모든 결과를 한 번에 출력
+    bw.flush()
+    bw.close()
 }
