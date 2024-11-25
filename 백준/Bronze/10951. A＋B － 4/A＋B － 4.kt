@@ -1,15 +1,12 @@
-import java.io.BufferedReader
-import java.io.InputStreamReader
+import java.util.Scanner
 
 fun main() {
-    val br = BufferedReader(InputStreamReader(System.`in`))
-    val sb = StringBuilder()
-    
-    while (true) {
-        val input = br.readLine() ?: break
-        val (a, b) = input.split(" ").map { it.toInt() }
-        sb.append(a + b).append("\n")
+    val scanner = Scanner(System.`in`)
+
+    while (scanner.hasNext()) {
+        val a = scanner.nextInt()
+        val b = scanner.nextInt()
+        println(a + b)
     }
-    
-    print(sb.toString())
 }
+
